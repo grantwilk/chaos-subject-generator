@@ -1,0 +1,130 @@
+.root {
+    -rc-seascape: #388f99;
+    -rc-flamingo: #b73969;
+    -rc-nowandlater: #893055;
+    -rc-ochregold: #d8a744;
+
+    -rc-dark1: #404040;
+    -rc-dark2: #303030;
+
+    -rc-light1: #e0e0e0;
+    -rc-light2: #c0c0c0;
+}
+
+.btn {
+    -fx-font-family: Montserrat Medium;
+    -fx-background-radius: 100px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 0, 0, 2, 2);
+}
+
+.btn.btn-seascape {
+    .btn;
+    -fx-background-color: -rc-seascape;
+    -fx-text-fill: -rc-light1;
+}
+
+.btn.btn-seascape:hover {
+    -fx-background-color: derive(-rc-seascape, -20%);
+}
+
+.btn.btn-flamingo{
+    -fx-background-color: -rc-flamingo;
+    -fx-text-fill: -rc-light1;
+}
+
+.btn.btn-flamingo:hover {
+    -fx-background-color: derive(-rc-flamingo, -20%);
+}
+
+.btn.btn-nowandlater{
+    -fx-background-color: -rc-nowandlater;
+    -fx-text-fill: -rc-light1;
+}
+
+.btn.btn-nowandlater:hover {
+    -fx-background-color: derive(-rc-nowandlater, -20%);
+}
+
+.btn.btn-ochregold{
+    -fx-background-color: -rc-ochregold;
+    -fx-text-fill: -rc-light1;
+}
+
+.btn.btn-ochregold:hover {
+    -fx-background-color: derive(-rc-ochregold, -20%);
+}
+
+.btn.btn-dark1{
+    -fx-background-color: -rc-dark1;
+    -fx-text-fill: -rc-light1;
+}
+
+.btn.btn-dark1:hover {
+    -fx-background-color: derive(-rc-dark1, -20%);
+}
+
+.btn.btn-dark2{
+    -fx-background-color: -rc-dark2;
+    -fx-text-fill: -rc-light1;
+}
+
+.btn.btn-dark2:hover {
+    -fx-background-color: derive(-rc-dark2, -20%);
+}
+
+.btn.btn-light1{
+    -fx-background-color: -rc-light1;
+    -fx-text-fill: -rc-dark2;
+}
+
+.btn.btn-light1:hover {
+    -fx-background-color: derive(-rc-light1, -20%);
+}
+
+.btn.btn-light2{
+    -fx-background-color: -rc-light2;
+    -fx-text-fill: -rc-dark2;
+}
+
+.btn.btn-light2:hover {
+    -fx-background-color: derive(-rc-light2, -20%);
+}
+
+.btn.btn-generator {
+    -fx-background-color: transparent;
+
+    -fx-border-color: #5a5a5a;
+    -fx-border-radius: 500px;
+    -fx-border-width: 1px;
+}
+
+.lbl {
+    -fx-font-family: Montserrat Bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 0, 0, 2, 2);
+}
+
+.txt-field {
+    -fx-font-family: Montserrat Medium;
+    -fx-text-fill: -rc-light1;
+
+    -fx-background-color: -rc-dark1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 0, 0, 2, 2);
+}
+
+.chk-box {
+    -fx-font-family: Montserrat Medium;
+    -fx-text-fill: -rc-light1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 0, 0, 2, 2);
+}
+
+.chk-box .box {
+    -fx-background-color: -rc-dark1;
+}
+
+.chk-box:selected .box {
+    -fx-background-color: -rc-seascape;
+}
+
+.chk-box:selected .mark {
+    -fx-background-color: -rc-light1;
+}

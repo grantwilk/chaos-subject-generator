@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragMoveStage" onMousePressed="#dragSetOrigin" prefHeight="100.0" prefWidth="620.0" style="-fx-background-color: #232323; -fx-background-radius: 6;" stylesheets="@chaosStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chaos.chaosController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="146.5714372907366" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="136.28570556640628" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="406.2857142857142" minWidth="10.0" prefWidth="322.7142355782645" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <VBox alignment="CENTER_RIGHT" prefHeight="99.0" prefWidth="233.0">
+         <children>
+            <Label fx:id="labelTimer" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" prefHeight="51.0" prefWidth="114.0" styleClass="lbl" text="00:00" textAlignment="CENTER" textFill="#dadada">
+               <font>
+                  <Font size="35.0" />
+               </font>
+               <VBox.margin>
+                  <Insets right="15.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" prefHeight="99.0" prefWidth="142.0" GridPane.columnIndex="1">
+         <children>
+            <Button fx:id="buttonStartStop" mnemonicParsing="false" onAction="#startTimer" onMouseEntered="#cursorToHand" onMouseExited="#cursorToDefault" prefHeight="30.0" prefWidth="100.0" text="START" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Couture-Bold" size="12.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-seascape" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#resetTimer" onMouseEntered="#cursorToHand" onMouseExited="#cursorToDefault" prefHeight="30.0" prefWidth="100.0" text="RESET" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-dark1" />
+               </styleClass>
+            </Button>
+         </children>
+      </VBox>
+      <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="225.0" GridPane.columnIndex="2">
+         <children>
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </HBox>
+            <Pane prefHeight="99.0" prefWidth="321.0">
+               <children>
+                  <Button layoutX="1.0" layoutY="18.0" mnemonicParsing="false" onAction="#generateSubject" onMouseEntered="#cursorToHand" onMouseExited="#cursorToDefault" prefHeight="65.0" prefWidth="291.0">
+                     <graphic>
+                        <VBox alignment="CENTER" prefHeight="55.0" prefWidth="226.0">
+                           <children>
+                              <Label fx:id="labelSubject" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" lineSpacing="-5" prefHeight="54.0" prefWidth="235.0" styleClass="lbl" text="SUBJECT LABEL" textAlignment="CENTER" textFill="#dadada" wrapText="true">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-generator" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="265.0" layoutY="56.0" maxHeight="10.0" maxWidth="10.0" minHeight="27.0" minWidth="27.0" mnemonicParsing="false" onAction="#revertSubject" onMouseEntered="#cursorToHand" onMouseExited="#cursorToDefault" prefHeight="27.0" prefWidth="27.0">
+                     <graphic>
+                        <SVGPath content="M421.125,134.191c-11.608-27.03-27.217-50.347-46.819-69.949C354.7,44.639,331.384,29.033,304.353,17.42C277.325,5.807,248.969,0.005,219.275,0.005c-27.978,0-55.052,5.277-81.227,15.843C111.879,26.412,88.61,41.305,68.243,60.531l-37.12-36.835c-5.711-5.901-12.275-7.232-19.701-3.999C3.807,22.937,0,28.554,0,36.547v127.907c0,4.948,1.809,9.231,5.426,12.847c3.619,3.617,7.902,5.426,12.85,5.426h127.907c7.996,0,13.61-3.807,16.846-11.421c3.234-7.423,1.903-13.988-3.999-19.701l-39.115-39.398c13.328-12.563,28.553-22.222,45.683-28.98c17.131-6.757,35.021-10.138,53.675-10.138c19.793,0,38.687,3.858,56.674,11.563c17.99,7.71,33.544,18.131,46.679,31.265c13.134,13.131,23.555,28.69,31.265,46.679c7.703,17.987,11.56,36.875,11.56,56.674c0,19.798-3.856,38.686-11.56,56.672c-7.71,17.987-18.131,33.544-31.265,46.679c-13.135,13.134-28.695,23.558-46.679,31.265c-17.987,7.707-36.881,11.561-56.674,11.561c-22.651,0-44.064-4.949-64.241-14.843c-20.174-9.894-37.209-23.883-51.104-41.973c-1.331-1.902-3.521-3.046-6.567-3.429c-2.856,0-5.236,0.855-7.139,2.566l-39.114,39.402c-1.521,1.53-2.33,3.478-2.426,5.853c-0.094,2.385,0.527,4.524,1.858,6.427c20.749,25.125,45.871,44.587,75.373,58.382c29.502,13.798,60.625,20.701,93.362,20.701c29.694,0,58.05-5.808,85.078-17.416c27.031-11.607,50.34-27.22,69.949-46.821c19.605-19.609,35.211-42.921,46.822-69.949s17.411-55.392,17.411-85.08C438.536,189.569,432.732,161.22,421.125,134.191z" fill="#dadada" scaleX="0.025" scaleY="0.025" scaleZ="0.025" translateX="0.75" translateY="0.75">
+                           <rotationAxis>
+                              <Point3D />
+                           </rotationAxis>
+                        </SVGPath>
+                     </graphic>
+                     <effect>
+                        <DropShadow color="#00000042" height="1.0" offsetX="1.5" offsetY="1.5" radius="0.0" width="1.0" />
+                     </effect>
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-seascape" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="305.0" layoutY="5.0" maxHeight="15.0" maxWidth="15.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#exitApplication" onMouseEntered="#cursorToHand" onMouseExited="#cursorToDefault" prefHeight="15.0" prefWidth="15.0" style="-fx-background-color: transparent;" textFill="WHITE">
+                     <graphic>
+                        <SVGPath content="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" fill="#dadada" scaleX="0.35" scaleY="0.35" scaleZ="0.35" translateY="0.25" />
+                     </graphic>
+                  </Button>
+                  <Button layoutX="291.0" layoutY="6.0" maxHeight="15.0" maxWidth="15.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#showSettings" onMouseEntered="#cursorToHand" onMouseExited="#cursorToDefault" prefHeight="15.0" prefWidth="15.0" style="-fx-background-color: transparent;" textFill="WHITE">
+                     <graphic>
+                        <SVGPath content="M537.998,227.826h-20.963c-5.225,0-13.502-6.353-17.029-15.471c-1.242-3.213-2.576-6.432-3.963-9.569c-3.953-8.938-2.596-19.278,1.096-22.962l14.838-14.819c18.441-18.443,18.441-48.443,0.006-66.879l-24.783-24.783c-8.951-8.951-20.83-13.877-33.455-13.877s-24.504,4.927-33.451,13.877l-14.822,14.822c-2.158,2.157-6.531,3.498-11.414,3.498c-3.957,0-8.064-0.851-11.564-2.399c-3.139-1.386-6.352-2.717-9.553-3.957c-9.123-3.528-15.479-11.809-15.479-17.032V47.292C357.461,21.218,336.246,0,310.172,0h-35.049c-26.077,0-47.289,21.215-47.289,47.292v20.982c0,5.223-6.356,13.5-15.475,17.029c-3.191,1.233-6.405,2.564-9.553,3.954c-3.5,1.548-7.613,2.399-11.573,2.399c-4.883,0-9.259-1.34-11.417-3.495l-14.829-14.823c-8.938-8.938-20.82-13.865-33.452-13.865s-24.504,4.927-33.431,13.877L73.334,98.122c-18.437,18.437-18.437,48.437,0,66.873l14.823,14.823c3.69,3.69,5.052,14.039,1.102,22.987c-1.383,3.136-2.714,6.349-3.951,9.553c-3.525,9.116-11.805,15.468-17.035,15.468H47.297c-26.077,0-47.289,21.215-47.289,47.292v35.049c0,26.074,21.215,47.289,47.289,47.289H68.27c5.227,0,13.51,6.352,17.032,15.469c1.236,3.201,2.567,6.414,3.95,9.549c3.951,8.949,2.589,19.297-1.102,22.988l-14.823,14.822c-18.437,18.434-18.437,48.449-0.006,66.9l24.786,24.789c8.935,8.932,20.808,13.854,33.437,13.854c12.628,0,24.501-4.918,33.437-13.854l14.832-14.842c2.188-2.189,6.454-3.496,11.408-3.496c3.957,0,8.063,0.85,11.567,2.398c3.109,1.377,6.328,2.711,9.562,3.963c9.122,3.527,15.475,11.805,15.475,17.029v20.963c0,26.074,21.215,47.293,47.289,47.293h35.05c26.076,0,47.289-21.215,47.289-47.293v-20.963c0-5.225,6.352-13.502,15.467-17.023c3.201-1.236,6.414-2.566,9.551-3.953c3.5-1.545,7.607-2.396,11.564-2.396c4.889,0,9.266,1.34,11.422,3.498l14.822,14.822c8.961,8.936,20.842,13.854,33.469,13.854c1.367,0,2.75-0.062,4.111-0.182c17.268-1.5,32.502-16.805,40.686-25.027l1.035-1.037l12.391-12.391c18.404-18.451,18.404-48.455,0.008-66.895l-14.832-14.832c-3.689-3.689-5.051-14.039-1.102-22.99c1.391-3.145,2.719-6.357,3.951-9.549c3.525-9.117,11.803-15.469,17.025-15.469h20.965c26.078,0,47.289-21.215,47.289-47.293v-35.045C585.287,249.041,564.072,227.826,537.998,227.826z M420.607,292.643c0,70.559-57.402,127.961-127.959,127.961c-70.558,0-127.96-57.402-127.96-127.961c0-70.557,57.403-127.959,127.96-127.959C363.205,164.683,420.607,222.085,420.607,292.643z" fill="#dadada" scaleX="0.015" scaleY="0.015" scaleZ="0.015" translateX="1.0" />
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</GridPane>
