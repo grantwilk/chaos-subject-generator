@@ -9,7 +9,7 @@ The Chaos Subject Generator is still in alpha, meaning some features are incompl
 
 ## GET CHAOS SUBJECT GENERATOR
 
-**Download:** [https://github.com/grantwilk/chaos-subject-generator/releases/latest/download/chaos_subject_generator.exe](https://github.com/grantwilk/chaos-subject-generator/releases/latest/download/chaos_subject_generator.exe)
+**Download:** [https://github.com/grantwilk/chaos-subject-generator/releases/latest](https://github.com/grantwilk/chaos-subject-generator/releases/latest)
 
 **Older Versions:** [https://github.com/grantwilk/chaos-subject-generator/releases](https://github.com/grantwilk/chaos-subject-generator/releases)
 
