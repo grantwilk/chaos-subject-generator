@@ -136,6 +136,9 @@ public class chaosSettingsController extends windowController {
         closeSettings();
     }
 
+    /**
+     * Increments the amount of hours in the settings field by 1
+     */
     @FXML
     private void incrementHours() {
         int increment = Integer.parseInt(hoursField.getText()) + 1;
@@ -147,6 +150,9 @@ public class chaosSettingsController extends windowController {
         }
     }
 
+    /**
+     * Increments the amount of minutes in the settings field by 1
+     */
     @FXML
     private void incrementMinutes() {
         int increment = Integer.parseInt(minutesField.getText()) + 1;
@@ -157,6 +163,9 @@ public class chaosSettingsController extends windowController {
         }
     }
 
+    /**
+     * Increments the amount of seconds in the settings field by 1
+     */
     @FXML
     private void incrementSeconds(){
         int increment = Integer.parseInt(secondsField.getText()) + 1;
@@ -168,6 +177,9 @@ public class chaosSettingsController extends windowController {
         }
     }
 
+    /**
+     * Decrements the amount of hours in the settings field by 1
+     */
     @FXML
     private void decrementHours() {
         int increment = Integer.parseInt(hoursField.getText()) - 1;
@@ -179,6 +191,9 @@ public class chaosSettingsController extends windowController {
         }
     }
 
+    /**
+     * Decrements the amount of minutes in the settings field by 1
+     */
     @FXML
     private void decrementMinutes() {
         int increment = Integer.parseInt(minutesField.getText()) - 1;
@@ -190,6 +205,9 @@ public class chaosSettingsController extends windowController {
         }
     }
 
+    /**
+     * Decrements the amount of seconds in the settings field by 1
+     */
     @FXML
     private void decrementSeconds() {
         int increment = Integer.parseInt(secondsField.getText()) - 1;

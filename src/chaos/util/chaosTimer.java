@@ -85,12 +85,20 @@ public class chaosTimer {
         reset();
     }
 
+    /**
+     * Returns the amount of hours on the clock as a double (e.g. 05:20:54 returns 5)
+     * @return the amount of hours on the clock as a double
+     */
     public double getHours() {
         double hours = Math.floor((timeRemaining / 3600E9));
         if (hours < 0) { hours = 0; }
         return hours;
     }
 
+    /**
+     * Returns the amount of minutes on the clock as a double (e.g. 05:20:54 returns 20)
+     * @return the amount of minutes on the clock as a double
+     */
     public double getMinutes() {
         double time = timeRemaining - getHours() * 3600E9;
         double minutes = Math.floor((time / 60E9));
@@ -98,15 +106,15 @@ public class chaosTimer {
         return minutes;
     }
 
+    /**
+     * Returns the amount of seconds on the clock as a double (e.g. 05:20:54 returns 54)
+     * @return the amount of seconds on the clock as a double
+     */
     public double getSeconds() {
         double time = timeRemaining - getHours() * 3600E9 - getMinutes() * 60E9;
         double seconds = Math.floor((time / 1E9));
         if (seconds < 0) { seconds = 0; }
         return seconds;
-    }
-
-    public StringProperty getTimeText() {
-        return timeText;
     }
 
     /**
@@ -133,6 +141,14 @@ public class chaosTimer {
         } else {
             timerLabel.setFont(new Font("Montserrat", 55));
         }
+    }
+
+    /**
+     * Returns the internal string property that carries the time on the clock
+     * @return the internal string property that carries the time on the clock
+     */
+    public StringProperty getTimeText() {
+        return timeText;
     }
 
     /**

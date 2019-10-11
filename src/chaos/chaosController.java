@@ -179,6 +179,10 @@ public class chaosController extends windowController {
         }
     }
 
+    /**
+     * Dynamically resizes the subject label based on the length of the subject string
+     * @param subject - the string displayed in the label
+     */
     private void updateSubjectLabelFontSize(String subject) {
         if (subject.length() < 10) {
             labelSubject.setStyle("-fx-font-size: 24px");
