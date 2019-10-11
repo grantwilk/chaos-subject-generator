@@ -1,4 +1,4 @@
-package chaos;
+package chaos.util;
 
 import java.io.InputStream;
 import java.lang.reflect.Array;

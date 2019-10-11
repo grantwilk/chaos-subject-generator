@@ -1,4 +1,4 @@
-package chaos;
+package chaos.util;
 
 import javafx.animation.AnimationTimer;
 import javafx.beans.property.ObjectProperty;
@@ -21,7 +21,7 @@ public class chaosTimer {
 
     private Label timerLabel;
 
-    StringProperty timeText = new SimpleStringProperty();
+    private StringProperty timeText = new SimpleStringProperty();
 
     private AnimationTimer timer = new AnimationTimer() {
         @Override
@@ -103,6 +103,10 @@ public class chaosTimer {
         double seconds = Math.floor((time / 1E9));
         if (seconds < 0) { seconds = 0; }
         return seconds;
+    }
+
+    public StringProperty getTimeText() {
+        return timeText;
     }
 
     /**

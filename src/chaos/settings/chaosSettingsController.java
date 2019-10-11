@@ -1,5 +1,9 @@
-package chaos;
+package chaos.settings;
 
+import chaos.chaosController;
+import chaos.util.chaosTimer;
+import chaos.util.subjectGenerator;
+import chaos.util.windowController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -8,7 +12,7 @@ import javafx.scene.control.TextField;
 import static java.lang.String.format;
 
 
-public class chaosSettingsController extends windowController{
+public class chaosSettingsController extends windowController {
 
     // timer settings text fields
     @FXML
@@ -23,7 +27,7 @@ public class chaosSettingsController extends windowController{
     private TextField seedField;
 
     // objects affected by settings
-    private subjectGenerator subjectGenerator;
+    private chaos.util.subjectGenerator subjectGenerator;
     private chaosTimer timer;
     private chaosController callingController;
 

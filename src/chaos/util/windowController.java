@@ -1,4 +1,4 @@
-package chaos;
+package chaos.util;
 
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -76,7 +76,7 @@ public abstract class windowController {
     /**
      * Drag delta for window drag updates
      */
-    class Delta {
+    private class Delta {
         private double x, y;
     }
 }

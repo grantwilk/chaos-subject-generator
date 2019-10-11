@@ -1,5 +1,9 @@
 package chaos;
 
+import chaos.settings.chaosSettingsController;
+import chaos.util.chaosTimer;
+import chaos.util.subjectGenerator;
+import chaos.util.windowController;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,14 +14,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.*;
 import java.util.*;
 
-public class chaosController extends windowController{
+public class chaosController extends windowController {
 
     // FXML elements
     @FXML
@@ -28,7 +31,7 @@ public class chaosController extends windowController{
     private Label labelSubject;
 
     // subject generator variables
-    private subjectGenerator subjectGenerator = new subjectGenerator();
+    private chaos.util.subjectGenerator subjectGenerator = new subjectGenerator();
     private Stack<String> subjectStack = new Stack<>();
     private static final int MAX_SUBJECT_STACK_SIZE = 20;
 
@@ -45,7 +48,7 @@ public class chaosController extends windowController{
         timer = new chaosTimer(600, labelTimer);
         generateSubject();
 
-        labelTimer.textProperty().bind(timer.timeText);
+        labelTimer.textProperty().bind(timer.getTimeText());
     }
 
     /**
@@ -65,7 +68,7 @@ public class chaosController extends windowController{
             final int SETTINGS_WINDOW_WIDTH = 300; // px
             final int SETTINGS_WINDOW_HEIGHT= 500; // px
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("chaosSettingsUI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("settings/chaosSettingsUI.fxml"));
             Parent root = loader.load();
 
             Stage settingsStage = new Stage();

@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragMoveStage" onMousePressed="#dragSetOrigin" prefHeight="525.0" prefWidth="300.0" style="-fx-background-color: #2c2c2c; -fx-background-radius: 6;" stylesheets="@chaosStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chaos.chaosSettingsController">
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragMoveStage" onMousePressed="#dragSetOrigin" prefHeight="525.0" prefWidth="300.0" style="-fx-background-color: #2c2c2c; -fx-background-radius: 6;" stylesheets="@../style/chaosStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chaos.settings.chaosSettingsController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="150.0" />
    </columnConstraints>
