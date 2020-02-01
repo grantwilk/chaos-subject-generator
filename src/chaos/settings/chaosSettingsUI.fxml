@@ -241,7 +241,7 @@
             <Label styleClass="lbl" text="Other Settings" textFill="#dadada" />
             <VBox alignment="CENTER">
                <children>
-                  <CheckBox mnemonicParsing="false" onMouseEntered="#cursorToHand" onMouseExited="#cursorToDefault" prefHeight="20.0" prefWidth="160.0" selected="true" styleClass="chk-box" text="Always On Top" textFill="SILVER">
+                  <CheckBox fx:id="toggleAlwaysOnTop" mnemonicParsing="false" onMouseEntered="#cursorToHand" onMouseExited="#cursorToDefault" prefHeight="20.0" prefWidth="160.0" selected="true" styleClass="chk-box" text="Always On Top" textFill="SILVER">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>

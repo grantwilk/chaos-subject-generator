@@ -7,6 +7,7 @@ import chaos.util.windowController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
 import static java.lang.String.format;
@@ -14,7 +15,7 @@ import static java.lang.String.format;
 
 public class chaosSettingsController extends windowController {
 
-    // timer settings text fields
+    // timer settings
     @FXML
     private TextField hoursField;
     @FXML
@@ -22,9 +23,13 @@ public class chaosSettingsController extends windowController {
     @FXML
     private TextField secondsField;
 
-    // seed settings text fields
+    // generator settings
     @FXML
     private TextField seedField;
+
+    // other settings
+    @FXML
+    private CheckBox toggleAlwaysOnTop;
 
     // objects affected by settings
     private chaos.util.subjectGenerator subjectGenerator;
@@ -107,7 +112,7 @@ public class chaosSettingsController extends windowController {
      * Closes the settings dialog without applying settings
      */
     @FXML
-    private void closeSettings() { super.getStage().close(); }
+    private void closeSettings() { super.getStage().hide(); }
 
     /**
      * Applys the settings in the settings dialog, then closes it

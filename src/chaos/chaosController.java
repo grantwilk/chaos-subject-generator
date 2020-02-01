@@ -30,6 +30,11 @@ public class chaosController extends windowController {
     @FXML
     private Label labelSubject;
 
+    // settings window
+    Stage settingsStage;
+    Scene settingsScene;
+    chaosSettingsController settingsController;
+
     // subject generator variables
     private chaos.util.subjectGenerator subjectGenerator = new subjectGenerator();
     private Stack<String> subjectStack = new Stack<>();
@@ -49,21 +54,8 @@ public class chaosController extends windowController {
         generateSubject();
 
         labelTimer.textProperty().bind(timer.getTimeText());
-    }
 
-    /**
-     * Exits the application
-     */
-    @FXML
-    private void exitApplication(){
-        Platform.exit();
-    }
-
-    /**
-     * Shows the settings window
-     */
-    @FXML
-    private void showSettings() {
+        // configure settings stage
         try {
             final int SETTINGS_WINDOW_WIDTH = 300; // px
             final int SETTINGS_WINDOW_HEIGHT= 500; // px
@@ -71,8 +63,8 @@ public class chaosController extends windowController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("settings/chaosSettingsUI.fxml"));
             Parent root = loader.load();
 
-            Stage settingsStage = new Stage();
-            Scene settingsScene = new Scene(root, SETTINGS_WINDOW_WIDTH, SETTINGS_WINDOW_HEIGHT);
+            settingsStage = new Stage();
+            settingsScene = new Scene(root, SETTINGS_WINDOW_WIDTH, SETTINGS_WINDOW_HEIGHT);
             settingsScene.setFill(Color.TRANSPARENT);
 
             // configure scene
@@ -91,18 +83,32 @@ public class chaosController extends windowController {
                             .getResourceAsStream("icon/chaos_logo_1024px.png"))));
 
             // configure controller
-            chaosSettingsController controller = loader.getController();
-            controller.setStage(settingsStage);
-            controller.setScene(settingsScene);
-            controller.setTimer(timer);
-            controller.setSubjectGenerator(subjectGenerator);
-            controller.setChaosController(this);
-
-            settingsStage.show();
+            settingsController = loader.getController();
+            settingsController.setStage(settingsStage);
+            settingsController.setScene(settingsScene);
+            settingsController.setTimer(timer);
+            settingsController.setSubjectGenerator(subjectGenerator);
+            settingsController.setChaosController(this);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Exits the application
+     */
+    @FXML
+    private void exitApplication(){
+        Platform.exit();
+    }
+
+    /**
+     * Shows the settings window
+     */
+    @FXML
+    private void showSettings() {
+        settingsStage.show();
     }
 
     /**
