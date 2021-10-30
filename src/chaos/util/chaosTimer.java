@@ -35,7 +35,7 @@ public class chaosTimer {
         }
     };
 
-    private AudioClip alarm = new AudioClip(
+    private final AudioClip alarm = new AudioClip(
             getClass().getClassLoader().getResource("audio/alarm.mp3").toString());
 
     /**

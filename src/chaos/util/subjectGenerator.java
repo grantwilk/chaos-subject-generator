@@ -68,16 +68,10 @@ public class subjectGenerator {
     public String generateRandom() {
         String subject;
 
-        switch (rand.nextInt(3)){
-            case (0):
-                subject = generateAdjNounCombo();
-                break;
-            case (1):
-                subject = generateNounNounCombo();
-                break;
-            default:
-                subject = generateVerbNounCombo();
-                break;
+        if (rand.nextInt(2) == 0) {
+            subject = generateAdjNounCombo();
+        } else {
+            subject = generateNounNounCombo();
         }
 
         return subject;
