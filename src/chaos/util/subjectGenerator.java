@@ -56,7 +56,10 @@ public class subjectGenerator {
     private void loadList(List<String> wordList, InputStream in) {
         try (Scanner parser = new Scanner(in)) {
             while (parser.hasNextLine()) {
-                wordList.add(parser.nextLine());
+                String line = parser.nextLine();
+                if ((line.length() > 0) && (line.charAt(0) != '#')) {
+                    wordList.add(line);
+                }
             }
         }
     }
